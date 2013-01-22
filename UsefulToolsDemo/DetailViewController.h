@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
 
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) IBOutlet UILabel *lblName;
+@property (strong, nonatomic) IBOutlet UILabel *lblAge;
+@property (strong, nonatomic) IBOutlet UILabel *lblWeight;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+- (void) setPetData:(Pet *)pet;
+
 @end

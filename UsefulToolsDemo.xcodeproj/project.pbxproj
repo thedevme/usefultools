@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		46E112EB16AF302C002B8DD7 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 46E112EC16AF302C002B8DD7 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				46E112EF16AF3030002B8DD7 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		46E112BE16AF2FEB002B8DD7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E112BD16AF2FEB002B8DD7 /* UIKit.framework */; };
 		46E112C016AF2FEB002B8DD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E112BF16AF2FEB002B8DD7 /* Foundation.framework */; };
@@ -20,6 +34,13 @@
 		46E112DA16AF2FEB002B8DD7 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E112D916AF2FEB002B8DD7 /* DetailViewController.m */; };
 		46E112DD16AF2FEB002B8DD7 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46E112DB16AF2FEB002B8DD7 /* MasterViewController.xib */; };
 		46E112E016AF2FEB002B8DD7 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46E112DE16AF2FEB002B8DD7 /* DetailViewController.xib */; };
+		46E112F216AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46E112F016AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodeld */; };
+		46E112FA16AF31A8002B8DD7 /* AddPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E112F816AF31A8002B8DD7 /* AddPetViewController.m */; };
+		46E112FB16AF31A8002B8DD7 /* AddPetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46E112F916AF31A8002B8DD7 /* AddPetViewController.xib */; };
+		46E1130016AF3254002B8DD7 /* _Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E112FD16AF3254002B8DD7 /* _Pet.m */; };
+		46E1130116AF3254002B8DD7 /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E112FF16AF3254002B8DD7 /* Pet.m */; };
+		46E1130516AF3366002B8DD7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E1130416AF3366002B8DD7 /* CoreData.framework */; };
+		46E1130916AF3654002B8DD7 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E1130816AF3654002B8DD7 /* CoreDataStack.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +63,17 @@
 		46E112D916AF2FEB002B8DD7 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		46E112DC16AF2FEB002B8DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		46E112DF16AF2FEB002B8DD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		46E112F116AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UsefulToolsDemoModel.xcdatamodel; sourceTree = "<group>"; };
+		46E112F716AF31A8002B8DD7 /* AddPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPetViewController.h; sourceTree = "<group>"; };
+		46E112F816AF31A8002B8DD7 /* AddPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPetViewController.m; sourceTree = "<group>"; };
+		46E112F916AF31A8002B8DD7 /* AddPetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPetViewController.xib; sourceTree = "<group>"; };
+		46E112FC16AF3254002B8DD7 /* _Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Pet.h; sourceTree = "<group>"; };
+		46E112FD16AF3254002B8DD7 /* _Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Pet.m; sourceTree = "<group>"; };
+		46E112FE16AF3254002B8DD7 /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		46E112FF16AF3254002B8DD7 /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		46E1130416AF3366002B8DD7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		46E1130716AF3654002B8DD7 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		46E1130816AF3654002B8DD7 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E1130516AF3366002B8DD7 /* CoreData.framework in Frameworks */,
 				46E112BE16AF2FEB002B8DD7 /* UIKit.framework in Frameworks */,
 				46E112C016AF2FEB002B8DD7 /* Foundation.framework in Frameworks */,
 				46E112C216AF2FEB002B8DD7 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +111,7 @@
 		46E112BC16AF2FEB002B8DD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46E1130416AF3366002B8DD7 /* CoreData.framework */,
 				46E112BD16AF2FEB002B8DD7 /* UIKit.framework */,
 				46E112BF16AF2FEB002B8DD7 /* Foundation.framework */,
 				46E112C116AF2FEB002B8DD7 /* CoreGraphics.framework */,
@@ -88,14 +122,11 @@
 		46E112C316AF2FEB002B8DD7 /* UsefulToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				46E112CC16AF2FEB002B8DD7 /* AppDelegate.h */,
-				46E112CD16AF2FEB002B8DD7 /* AppDelegate.m */,
-				46E112D516AF2FEB002B8DD7 /* MasterViewController.h */,
-				46E112D616AF2FEB002B8DD7 /* MasterViewController.m */,
-				46E112D816AF2FEB002B8DD7 /* DetailViewController.h */,
-				46E112D916AF2FEB002B8DD7 /* DetailViewController.m */,
-				46E112DB16AF2FEB002B8DD7 /* MasterViewController.xib */,
-				46E112DE16AF2FEB002B8DD7 /* DetailViewController.xib */,
+				46E1130A16AF3656002B8DD7 /* Helpers */,
+				46E112F316AF305A002B8DD7 /* Model */,
+				46E112F416AF3066002B8DD7 /* Delegate */,
+				46E112F516AF3070002B8DD7 /* Controllers */,
+				46E112F616AF307D002B8DD7 /* Views */,
 				46E112C416AF2FEB002B8DD7 /* Supporting Files */,
 			);
 			path = UsefulToolsDemo;
@@ -115,6 +146,83 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		46E112F316AF305A002B8DD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46E1130216AF3260002B8DD7 /* Mogenerator */,
+				46E1130316AF326C002B8DD7 /* Pet */,
+				46E112F016AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		46E112F416AF3066002B8DD7 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				46E112CC16AF2FEB002B8DD7 /* AppDelegate.h */,
+				46E112CD16AF2FEB002B8DD7 /* AppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		46E112F516AF3070002B8DD7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				46E112D516AF2FEB002B8DD7 /* MasterViewController.h */,
+				46E112D616AF2FEB002B8DD7 /* MasterViewController.m */,
+				46E112D816AF2FEB002B8DD7 /* DetailViewController.h */,
+				46E112D916AF2FEB002B8DD7 /* DetailViewController.m */,
+				46E112F716AF31A8002B8DD7 /* AddPetViewController.h */,
+				46E112F816AF31A8002B8DD7 /* AddPetViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		46E112F616AF307D002B8DD7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46E112F916AF31A8002B8DD7 /* AddPetViewController.xib */,
+				46E112DB16AF2FEB002B8DD7 /* MasterViewController.xib */,
+				46E112DE16AF2FEB002B8DD7 /* DetailViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		46E1130216AF3260002B8DD7 /* Mogenerator */ = {
+			isa = PBXGroup;
+			children = (
+				46E112FC16AF3254002B8DD7 /* _Pet.h */,
+				46E112FD16AF3254002B8DD7 /* _Pet.m */,
+			);
+			name = Mogenerator;
+			sourceTree = "<group>";
+		};
+		46E1130316AF326C002B8DD7 /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				46E112FE16AF3254002B8DD7 /* Pet.h */,
+				46E112FF16AF3254002B8DD7 /* Pet.m */,
+			);
+			name = Pet;
+			sourceTree = "<group>";
+		};
+		46E1130616AF3619002B8DD7 /* Core Data Stack */ = {
+			isa = PBXGroup;
+			children = (
+				46E1130716AF3654002B8DD7 /* CoreDataStack.h */,
+				46E1130816AF3654002B8DD7 /* CoreDataStack.m */,
+			);
+			name = "Core Data Stack";
+			sourceTree = "<group>";
+		};
+		46E1130A16AF3656002B8DD7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				46E1130616AF3619002B8DD7 /* Core Data Stack */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +233,7 @@
 				46E112B516AF2FEB002B8DD7 /* Sources */,
 				46E112B616AF2FEB002B8DD7 /* Frameworks */,
 				46E112B716AF2FEB002B8DD7 /* Resources */,
+				46E112E616AF3003002B8DD7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -157,6 +266,7 @@
 			projectRoot = "";
 			targets = (
 				46E112B816AF2FEB002B8DD7 /* UsefulToolsDemo */,
+				46E112EB16AF302C002B8DD7 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -172,10 +282,40 @@
 				46E112D416AF2FEB002B8DD7 /* Default-568h@2x.png in Resources */,
 				46E112DD16AF2FEB002B8DD7 /* MasterViewController.xib in Resources */,
 				46E112E016AF2FEB002B8DD7 /* DetailViewController.xib in Resources */,
+				46E112FB16AF31A8002B8DD7 /* AddPetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46E112E616AF3003002B8DD7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		46E112EF16AF3030002B8DD7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd UsefulToolsDemo\nmogenerator --template-var arc=true -m UsefulToolsDemoModel.xcdatamodeld/UsefulToolsDemoModel.xcdatamodel/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46E112B516AF2FEB002B8DD7 /* Sources */ = {
@@ -186,6 +326,11 @@
 				46E112CE16AF2FEB002B8DD7 /* AppDelegate.m in Sources */,
 				46E112D716AF2FEB002B8DD7 /* MasterViewController.m in Sources */,
 				46E112DA16AF2FEB002B8DD7 /* DetailViewController.m in Sources */,
+				46E112F216AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodeld in Sources */,
+				46E112FA16AF31A8002B8DD7 /* AddPetViewController.m in Sources */,
+				46E1130016AF3254002B8DD7 /* _Pet.m in Sources */,
+				46E1130116AF3254002B8DD7 /* Pet.m in Sources */,
+				46E1130916AF3654002B8DD7 /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +436,20 @@
 			};
 			name = Release;
 		};
+		46E112ED16AF302C002B8DD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		46E112EE16AF302C002B8DD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -311,7 +470,28 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
+		46E112EC16AF302C002B8DD7 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E112ED16AF302C002B8DD7 /* Debug */,
+				46E112EE16AF302C002B8DD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		46E112F016AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				46E112F116AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodel */,
+			);
+			currentVersion = 46E112F116AF3055002B8DD7 /* UsefulToolsDemoModel.xcdatamodel */;
+			path = UsefulToolsDemoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 46E112B016AF2FEB002B8DD7 /* Project object */;
 }

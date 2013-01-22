@@ -19,8 +19,10 @@
 
     MasterViewController *masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

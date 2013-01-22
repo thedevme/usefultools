@@ -7,12 +7,10 @@
 //
 
 #import "MasterViewController.h"
-
+#import "Pet.h"
 #import "DetailViewController.h"
 
-@interface MasterViewController () {
-    NSMutableArray *_objects;
-}
+@interface MasterViewController ()
 @end
 
 @implementation MasterViewController
@@ -29,12 +27,55 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    [self initialize];
+}
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+
+- (void) initialize
+{
+    [self createNavigationButtons];
+    [self createModel];
+    [self checkData];
+}
+
+- (void) createNavigationButtons
+{
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(onAddTapped:)];
     self.navigationItem.rightBarButtonItem = addButton;
 }
+
+- (void) createModel
+{
+    self.dataStack = [CoreDataStack coreDataStackWithModelName:@"UsefulToolsDemoModel" databaseFilename:@"UsefulToolsDemoModel.sqlite"];
+    self.dataStack.coreDataStoreType = CDSStoreTypeSQL;
+    
+    
+    [self getData];
+}
+
+
+- (void) checkData
+{
+    BOOL isAtLeastOneEntity = [self.dataStack storeContainsAtLeastOneEntityOfClass:[Pet class]];
+    NSLog(isAtLeastOneEntity ? @"Yes" : @"No");
+}
+
+- (void) getData
+{
+    NSError* error = nil;
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"Pet"
+                                              inManagedObjectContext:self.dataStack.managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    NSArray *array = [_dataStack.managedObjectContext executeFetchRequest:request error:&error];
+    
+    self.arrPets = [[NSMutableArray alloc] initWithArray:array];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,14 +83,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)onAddTapped:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    self.addPetViewController = [[AddPetViewController alloc] initWithNibName:@"AddPetViewController" bundle:nil];
+    self.addPetViewController.delegate = self;
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:self.addPetViewController];
+    navController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    [self.navigationController presentViewController:navController animated:YES completion:nil];
+}
+
+- (void) savePet
+{
+    [self.arrPets removeAllObjects];
+    [self getData];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View
@@ -61,7 +109,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return self.arrPets.count;
 }
 
 // Customize the appearance of table view cells.
@@ -76,51 +124,23 @@
     }
 
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Pet *objPet = [self.arrPets objectAtIndex:[indexPath row]];
+    
+    cell.textLabel.text = [objPet name];
     return cell;
 }
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (!self.detailViewController) {
         self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     }
-    NSDate *object = _objects[indexPath.row];
-    self.detailViewController.detailItem = object;
+    
+    Pet *objPet = [self.arrPets objectAtIndex:[indexPath row]];
+    
+    
     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    [self.detailViewController setPetData:objPet];
 }
 
 @end
